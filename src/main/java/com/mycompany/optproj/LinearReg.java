@@ -166,13 +166,7 @@ public void train(int epochs, double learningRate) {
 
             System.out.println("Epoch " + (epoch + 1) + " - Loss: " + (totalLoss / m));
         }
-        
-        
-        
-        
-
-
-        
+ 
         System.out.println("\nFinal Weights:");
     for (int i = 0; i < weights.length; i++) {
         System.out.println("Weight " + (i + 1) + ": " + weights[i]);
@@ -181,7 +175,6 @@ public void train(int epochs, double learningRate) {
     
     saveWeightsToCSV();
 
-    
     }
 
 
@@ -378,6 +371,14 @@ public void saveWeightsToCSV() {
         System.err.println("Error saving weights: " + e.getMessage());
     }
 }
+
+    public void setWeights(double[] weights) {
+        this.weights = weights;
+    }
+
+    public void setBias(double bias) {
+        this.bias = bias;
+    }
 
 
     
