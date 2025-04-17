@@ -254,8 +254,36 @@ public class OptProj {
             
             reg.train(epochs, lr);
             double SGD = reg.testModel();
+            
+            for(int i = 0;i<numFeatures ;i++){
+            Random rand = new Random();
+ 
+            
+        for (i = 0; i < numFeatures; i++) {
+            weights[i] = rand.nextGaussian() * 0.01; // Small random normal values
+        }
+        }
+        bias = 0;
+        
+        reg.setWeights(weights);
+        reg.setBias(bias);
+        
             reg.trainBatch(epochs, lr);
             double GD = reg.testModel();
+            
+            for(int i = 0;i<numFeatures ;i++){
+            Random rand = new Random();
+ 
+            
+        for (i = 0; i < numFeatures; i++) {
+            weights[i] = rand.nextGaussian() * 0.01; // Small random normal values
+        }
+        }
+        bias = 0;
+        
+        reg.setWeights(weights);
+        reg.setBias(bias);
+        
             reg.trainMiniBatch(epochs, lr,batchS);
             double MBGD = reg.testModel();
             
